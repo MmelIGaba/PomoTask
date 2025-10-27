@@ -14,12 +14,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    const form = e.target;
+    const status = document.getElementById("my-form-status");
+    const data = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset();
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+        } else {
+          status.innerHTML = "Oops! There was a problem submitting your form";
+        }
+      }
+    } catch (error) {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    }
   };
 
   return (
@@ -28,7 +50,7 @@ const Contact = () => {
         <h2 className="text-4xl font-bold text-text mb-8">Get In Touch</h2>
         <p className="text-xl text-secondary mb-16 max-w-2xl mx-auto leading-relaxed">Have a project in mind? Let's collaborate — I'm always open to exciting opportunities.</p>
 
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto grid gap-8">
+        <form id="my-form" action="https://formspree.io/f/mldbvnod" method="POST" onSubmit={handleSubmit} className="max-w-2xl mx-auto grid gap-8">
           <input
             type="text"
             name="name"
@@ -62,6 +84,7 @@ const Contact = () => {
           >
             Send Message
           </button>
+          <p id="my-form-status" className="text-accent mt-4"></p>
         </form>
 
         <div className="flex justify-center space-x-8 mt-16 text-3xl">
