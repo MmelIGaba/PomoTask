@@ -20,15 +20,15 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-50">
+    <section id="projects" className="py-32 bg-primary">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-green-800 text-center mb-12">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-4xl font-bold text-text text-center mb-16">My Projects</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold text-green-700 mb-4">{project.title}</h3>
-              <p className="text-slate-600 mb-4">{project.description}</p>
-              <a href={project.link} className="inline-block text-green-600 font-medium hover:underline">View Project →</a>
+            <div key={index} className="bg-secondary p-8 rounded-lg border border-accent hover:border-accent/50 transition-all duration-300 hover:transform hover:scale-105">
+              <h3 className="text-2xl font-bold text-text mb-6">{project.title}</h3>
+              <p className="text-text mb-8 leading-relaxed">{project.description}</p>
+              <a href={project.link} className="inline-block text-accent font-bold hover:text-accent/80 transition-colors text-lg">View Project →</a>
             </div>
           ))}
         </div>

@@ -23,12 +23,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-32 bg-primary">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-green-800 mb-6">Get In Touch</h2>
-        <p className="text-slate-600 mb-8">Have a project in mind? Let's collaborate — I'm always open to exciting opportunities.</p>
+        <h2 className="text-4xl font-bold text-text mb-8">Get In Touch</h2>
+        <p className="text-xl text-secondary mb-16 max-w-2xl mx-auto leading-relaxed">Have a project in mind? Let's collaborate — I'm always open to exciting opportunities.</p>
 
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto grid gap-4">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto grid gap-8">
           <input
             type="text"
             name="name"
@@ -36,7 +36,7 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
+            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg"
           />
           <input
             type="email"
@@ -45,33 +45,33 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Email Address"
             required
-            className="w-full px-4 py-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
+            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg"
           />
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
-            rows="5"
+            rows="6"
             required
-            className="w-full px-4 py-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
+            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg resize-none"
           ></textarea>
           <button
             type="submit"
-            className="bg-green-600 hover:bg-green-500 transition text-white font-semibold px-6 py-3 rounded-md"
+            className="bg-accent hover:bg-accent/80 transition text-primary font-bold px-8 py-4 rounded-lg text-lg"
           >
             Send Message
           </button>
         </form>
 
-        <div className="flex justify-center space-x-6 mt-8 text-2xl">
-          <a href="https://github.com/MmelIGaba" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-green-600">
+        <div className="flex justify-center space-x-8 mt-16 text-3xl">
+          <a href="https://github.com/MmelIGaba" target="_blank" rel="noopener noreferrer" className="text-text hover:text-accent transition-colors">
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/mmela-dyantyi-849aa52a3/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-green-600">
+          <a href="https://www.linkedin.com/in/mmela-dyantyi-849aa52a3/" target="_blank" rel="noopener noreferrer" className="text-text hover:text-accent transition-colors">
             <i className="fab fa-linkedin"></i>
           </a>
-          <a href="mailto:msgwebworks@gmail.com" className="text-slate-600 hover:text-green-600">
+          <a href="mailto:msgwebworks@gmail.com" className="text-text hover:text-accent transition-colors">
             <i className="fas fa-envelope"></i>
           </a>
         </div>
