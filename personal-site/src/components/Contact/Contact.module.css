@@ -1,0 +1,130 @@
+.contact {
+  padding: 8rem 0;
+  background-color: var(--primary);
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--secondary-light);
+  margin-bottom: 4rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
+
+.form {
+  max-width: 42rem;
+  margin: 0 auto 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: var(--secondary);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  color: var(--text);
+  font-size: 1.125rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 140, 9, 0.2);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.textarea {
+  resize: none;
+}
+
+.button {
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: rgba(255, 140, 9, 0.8);
+}
+
+.status {
+  color: var(--accent);
+  margin-top: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.875rem;
+}
+
+.socialLink {
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.socialLink:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .form {
+    gap: 1.5rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  .socialLinks {
+    font-size: 1.5rem;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 3rem 0;
+  border-top: 1px solid var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 1rem;
+  }
+}

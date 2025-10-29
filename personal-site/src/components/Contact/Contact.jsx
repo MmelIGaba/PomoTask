@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Contact.module.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -45,12 +46,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-primary">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-text mb-8">Get In Touch</h2>
-        <p className="text-xl text-secondary-light mb-16 max-w-2xl mx-auto leading-relaxed">Ready to transform your business with custom web & mobile apps, AI integration, or MS Power Platform automation? Let's discuss your project in Johannesburg, South Africa.</p>
+    <section id="contact" className={styles.contact}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Get In Touch</h2>
+        <p className={styles.subtitle}>Ready to transform your business with custom web & mobile apps, AI integration, or MS Power Platform automation? Let's discuss your project in Johannesburg, South Africa.</p>
 
-        <form id="my-form" action="https://formspree.io/f/mldbvnod" method="POST" onSubmit={handleSubmit} className="max-w-2xl mx-auto grid gap-8">
+        <form id="my-form" action="https://formspree.io/f/mldbvnod" method="POST" onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
             name="name"
@@ -58,7 +59,7 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg"
+            className={styles.input}
           />
           <input
             type="email"
@@ -67,7 +68,7 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Email Address"
             required
-            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg"
+            className={styles.input}
           />
           <textarea
             name="message"
@@ -76,25 +77,25 @@ const Contact = () => {
             placeholder="Message"
             rows="6"
             required
-            className="w-full px-6 py-4 bg-secondary border border-accent rounded-lg focus:ring-2 focus:ring-accent focus:outline-none text-text placeholder-text/60 text-lg resize-none"
+            className={styles.textarea}
           ></textarea>
           <button
             type="submit"
-            className="bg-accent hover:bg-accent/80 transition text-primary font-bold px-8 py-4 rounded-lg text-lg"
+            className={styles.button}
           >
             Send Message
           </button>
-          <p id="my-form-status" className="text-accent mt-4"></p>
+          <p id="my-form-status" className={styles.status}></p>
         </form>
 
-        <div className="flex justify-center space-x-8 mt-16 text-3xl">
-          <a href="https://github.com/MmelIGaba" target="_blank" rel="noopener noreferrer" className="text-text hover:text-accent transition-colors">
+        <div className={styles.socialLinks}>
+          <a href="https://github.com/MmelIGaba" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/mmela-dyantyi-849aa52a3/" target="_blank" rel="noopener noreferrer" className="text-text hover:text-accent transition-colors">
+          <a href="https://www.linkedin.com/in/mmela-dyantyi-849aa52a3/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <i className="fab fa-linkedin"></i>
           </a>
-          <a href="mailto:msgwebworks@gmail.com" className="text-text hover:text-accent transition-colors">
+          <a href="mailto:msgwebworks@gmail.com" className={styles.socialLink}>
             <i className="fas fa-envelope"></i>
           </a>
         </div>

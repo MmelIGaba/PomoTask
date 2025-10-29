@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Projects.module.css';
 
 const Projects = () => {
   const projects = [
@@ -35,15 +36,15 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 bg-primary">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-text text-center mb-16">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <section id="projects" className={styles.projects}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>My Projects</h2>
+        <div className={styles.grid}>
           {projects.map((project, index) => (
-            <div key={index} className="bg-secondary p-8 rounded-lg border border-accent hover:border-accent/50 transition-all duration-300 hover:transform hover:scale-105">
-              <h3 className="text-2xl font-bold text-text mb-6">{project.title}</h3>
-              <p className="text-text mb-8 leading-relaxed">{project.description}</p>
-              <a href={project.link} className="inline-block text-accent font-bold hover:text-accent/80 transition-colors text-lg">View Project →</a>
+            <div key={index} className={styles.card}>
+              <h3 className={styles.cardTitle}>{project.title}</h3>
+              <p className={styles.cardDescription}>{project.description}</p>
+              <a href={project.link} className={styles.cardLink}>View Project →</a>
             </div>
           ))}
         </div>
